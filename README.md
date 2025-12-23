@@ -1,6 +1,24 @@
 # CSU Global CSC405: Graphics and Visualization Final Project
 The code within this repo is for the Colorado State University Global Campus final project that was constructed for the course CSC405: Graphics and Visualization. This project has several elements that need implementation across multiple different deliverables for the course.
 
+## My To-do Points
+- Paper Elements
+  - [ ] Lessons learned from course.
+    - [ ] Reflection on real-world problems and/or real applications.
+    - [ ] Course concepts used going forward.
+  - [ ] Program operations detailed description.
+  - [ ] Program execution review and screenshots.
+    - [ ] Interactive elements.
+    - [ ] Loading of the web page.
+    - [ ] Showing of shaders.
+- Program Elements
+  - [ ] Submit Moduel 5 draft of the project.
+  - [ ] Create shaders that color the objects.
+  - [ ] Create interactive viewer element for one or more items:
+    - [ ] Parts highlighting.
+    - [ ] Switch between visualizations.
+    - [ ] Toggle between different shaders.
+
 ## Module 5 - Portfolio Milestone
 ### Original Prompt:
 *This week’s discussion has introduced viewing, particularly with respect to various projections and related functions. In this assignment, you will briefly discuss several viewing functions (1-2 paragraphs) and then use the code snippet in section 5.4.6 to design an interactive Viewer using WebGL.*
