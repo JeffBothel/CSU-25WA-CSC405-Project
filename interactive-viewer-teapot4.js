@@ -20,12 +20,12 @@ var axis =0;
 
 var axis = 0;
 var xAxis = 0;
-var yAxis = 1;
-var zAxis = 2;
+var yAxis = 0;
+var zAxis = 0;
 var theta = vec3(0, 0, 0);
 var dTheta = 5.0;
 
-var flag = false;
+var flag = true; // Set this to true to have it rotate and show off the different angles of the teapot.
 
 var program;
 var canvas, render, gl;
@@ -229,7 +229,7 @@ onload = function init()  {
     var lightSpecular = vec4( 1.0, 1.0, 1.0, 1.0 );
 
     var materialAmbient = vec4( 1.0, 0.0, 1.0, 1.0 );
-    var materialDiffuse = vec4( 1.0, 0.8, 0.0, 1.0 );
+    var materialDiffuse = vec4( 0.0, 0.0, 0.0, 0.0 );
     var materialSpecular = vec4( 1.0, 0.8, 0.0, 1.0 );
     var materialShininess = 10.0;
 
