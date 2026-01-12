@@ -3,14 +3,14 @@ The code within this repo is for the Colorado State University Global Campus fin
 
 ## My To-do Points
 - Paper Elements
-  - [ ] Lessons learned from course.
-    - [ ] Reflection on real-world problems and/or real applications.
-    - [ ] Course concepts used going forward.
-  - [ ] Program operations detailed description.
-  - [ ] Program execution review and screenshots.
-    - [ ] Interactive elements.
-    - [ ] Loading of the web page.
-    - [ ] Showing of shaders.
+  - [X] Lessons learned from course.
+    - [X] Reflection on real-world problems and/or real applications.
+    - [X] Course concepts used going forward.
+  - [X] Program operations detailed description.
+  - [X] Program execution review and screenshots.
+    - [X] Interactive elements.
+    - [ ] ~~Loading of the web page.~~
+    - [X] Showing of shaders.
 - Program Elements - Hidden Surface Problem and Painter's Algorithm
   - [X] Submit Moduel 5 draft of the project.
   - [X] Create shaders that color the objects.
@@ -48,3 +48,6 @@ The code within this repo is for the Colorado State University Global Campus fin
 *Clearly provide the details of your program (provide a 2-paragraph overview), including the screenshots of your working program. Describe the object (primitive) that you are working with. Don’t forget to adequately comment your source code.*
 
 *Assemble all of the requirements for this project and submit to Canvas for grading by the due date. As a reminder, there are no late submissions for Module 8, as everything must be submitted by the last day of the term.*
+
+# Conclusions
+The code assembled for the project produces two simple graphical programs with different interactive elements. One provides illustrates interactivity with graphical representations on a screen. The other shows how computer operations can influence displays if 3D aspects of objects are not accounted for in graphical programming.
