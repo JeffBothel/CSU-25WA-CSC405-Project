@@ -11,13 +11,16 @@ The code within this repo is for the Colorado State University Global Campus fin
     - [ ] Interactive elements.
     - [ ] Loading of the web page.
     - [ ] Showing of shaders.
-- Program Elements
-  - [ ] Submit Moduel 5 draft of the project.
-  - [ ] Create shaders that color the objects.
-  - [ ] Create interactive viewer element for one or more items:
-    - [ ] Parts highlighting.
-    - [ ] Switch between visualizations.
-    - [ ] Toggle between different shaders.
+- Program Elements - Hidden Surface Problem and Painter's Algorithm
+  - [X] Submit Moduel 5 draft of the project.
+  - [X] Create shaders that color the objects.
+  - [X] Create interactive viewer element for one or more items:
+    - [ ] ~~Parts highlighting.~~
+    - [ ] ~~Switch between visualizations.~~
+    - [ ] ~~Toggle between different shaders.~~
+    - [X] Set X, Y, and Z sliders to move cube.
+    - [X] Set button to toggle depth checking on and off
+- Program Elements - Interactive Viewer
 
 ## Module 5 - Portfolio Milestone
 ### Original Prompt:
