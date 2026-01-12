@@ -1,19 +1,89 @@
+<!--
+Various components commented in the file originated from course materials at https://www.interactivecomputergraphics.com/Code/04/
+Source code utilized here is included from the course materials
+Angel, E., & Shreiner, D. (2020). Interactive Computer Graphics (8th ed.). Pearson Education, Inc. https://www.pearson.com/store/en-us/pearsonplus/p/9780135217160.html
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <title>CSC405 - Final Project - Hidden Surface Removal</title>
-        <script type="text/javascript" src="timeInfo.js"></script>          <!-- Added to produce a time stamp on the page. -->
-        <script type="text/javascript" src="hidden-surface.js"></script>
+        <script type="text/javascript" src="timeInfo.js"></script> <!-- Added to produce a time stamp on the page. -->
+        <!-- Shaders and JavaScript files shared from https://interactivecomputergraphics.com/Code/04/ -->
+        <script id="vertex-shader" type="x-shader/x-vertex">
+        #version 300 es
+
+        in  vec4 aPosition;
+        in  vec4 aColor;
+        out vec4 vColor;
+
+        uniform vec3 uTheta;
+
+        void main()
+        {
+            // Compute the sines and cosines of theta for each of
+            //   the three axes in one computation.
+            vec3 angles = radians(uTheta);
+            vec3 c = cos(angles);
+            vec3 s = sin(angles);
+
+            // Remeber: thse matrices are column-major
+            mat4 rx = mat4(1.0,  0.0,  0.0, 0.0,
+                    0.0,  c.x,  s.x, 0.0,
+                    0.0, -s.x,  c.x, 0.0,
+                    0.0,  0.0,  0.0, 1.0);
+
+            mat4 ry = mat4(c.y, 0.0, -s.y, 0.0,
+                    0.0, 1.0,  0.0, 0.0,
+                    s.y, 0.0,  c.y, 0.0,
+                    0.0, 0.0,  0.0, 1.0);
+
+
+            mat4 rz = mat4(c.z, s.z, 0.0, 0.0,
+                    -s.z,  c.z, 0.0, 0.0,
+                    0.0,  0.0, 1.0, 0.0,
+                    0.0,  0.0, 0.0, 1.0);
+
+            vColor = aColor;
+            gl_Position = rz * ry * rx * aPosition;
+            gl_Position.z = -gl_Position.z;
+        }
+        </script>
+        <script id="fragment-shader" type="x-shader/x-fragment">
+        #version 300 es
+
+        precision mediump float;
+
+        in vec4 vColor;
+        out vec4 fColor;
+
+        void
+        main()
+        {
+            fColor = vColor;
+        }
+        </script>
+        <script type="text/javascript" src="../Common/initShaders.js"></script>
+        <script type="text/javascript" src="../Common/MVnew.js"></script>
+        <!-- Shaders and JavaScript files shared from https://interactivecomputergraphics.com/Code/04/ and my own implementations of the controls -->
+        <script type="text/javascript" src="hidden-surface-cube.js"></script>
     </head>
-    <body>
-        <h1>CSC405 - Final Project - Hidden Surface Removal</h1>
-        <div id="datetime"></div>                                      <!-- Added to produce a time stamp on the page. -->
-        <div name="gl-canvas">
-            <canvas id="gl-canvas" width="800" height="800">
-                Your browser does not support the HTML5 canvas tag.
-            </canvas>
-        </div>
-    </body>
+
+<body>
+    <h1>CSC405 - Final Project - Hidden Surface Removal</h1>
+    <div id="datetime"></div> <!-- Added to produce a time stamp on the page. -->
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops ... your browser doesn't support the HTML5 canvas element
+    </canvas>
+    <div>
+        <input type="range" id="xSlider" min="0" max="360" value="0">X</input>
+        <input type="range" id="ySlider" min="0" max="360" value="0">Y</input>
+        <input type="range" id="zSlider" min="0" max="360" value="0">Z</input>
+    </div>
+    <div>
+        <button id="thetaSpin">Toggle Spin</button>
+        <button id="depthTest">Toggle Depth Test</button>
+    </div>
+</body>
 </html>
